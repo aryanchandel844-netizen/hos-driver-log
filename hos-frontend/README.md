@@ -1,16 +1,35 @@
-# React + Vite
+# HOS Driver Log System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Full Stack web application for tracking truck driver Hours of Service (HOS) logs, built in compliance with FMCSA regulations.
 
-Currently, two official plugins are available:
+## Tech Stack
+- **Backend:** Python, Django, Django REST Framework
+- **Frontend:** React (Vite), JavaScript
+- **Database:** SQLite3
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
+- Create and manage driver daily logs
+- Add duty status entries (Off Duty, Sleeper Berth, Driving, On Duty)
+- Visual 24-hour HOS grid display
+- FMCSA compliant tracking
+- REST API backend
 
-## React Compiler
+## How to Run
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Backend
+```bash
+cd hos_project
+env\Scripts\activate
+python manage.py runserver
 
-## Expanding the ESLint configuration
+## Frontend
+cd hos_project\hos-frontend npm run dev
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+API Endpoints
+GET /api/logs/ — List all driver logs
+POST /api/logs/ — Create new log
+POST /api/logs/{id}/add_duty_entry/ — Add duty entry
+GET /api/logs/{id}/hos_summary/ — Get HOS summary
+Screenshots
+App running at http://localhost:5173
+API running at http://127.0.0.1
